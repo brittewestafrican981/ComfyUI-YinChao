@@ -73,6 +73,16 @@ class AssetTests(unittest.TestCase):
         self.assertIn("MIT License", license_text)
         self.assertIn('license = { file = "LICENSE" }', pyproject)
 
+    def test_readmes_contain_v4_promotion_and_user_onboarding(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        english_readme = (ROOT / "README.en.md").read_text(encoding="utf-8")
+        self.assertIn("音潮音乐大模型 V4.0 重磅上线", readme)
+        self.assertIn("¥0.22/首", readme)
+        self.assertIn("YinChao Music V4.0 is now live", english_readme)
+        self.assertIn("¥0.22 per song", english_readme)
+        self.assertNotIn("当前代码托管在", readme)
+        self.assertNotIn("source code is hosted", english_readme)
+
     def test_settings_js_is_present_at_runtime_and_in_python_package(self):
         root_settings = ROOT / "js" / "settings.js"
         package_settings = ROOT / "yinchao_music" / "js" / "settings.js"

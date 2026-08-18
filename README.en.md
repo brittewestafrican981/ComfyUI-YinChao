@@ -2,13 +2,19 @@
 
 [中文](README.md)
 
+> 🎵 **YinChao Music V4.0 is now live!**
+>
+> Generate music from as little as **¥0.22 per song**. Apply now to claim a limited-time free quota.
+>
+> [Apply for Free Quota](https://platform.yinchaoyongxian.com/)
+
 YinChao Music nodes for modern ComfyUI V3. The plugin exposes lyric generation, prompt-to-song, reference generation, and song extension. Generated MP3 files are decoded automatically into native `AUDIO` values so they can connect to other audio, video, and subtitle nodes.
 
 ## Installation
 
 ### ComfyUI Manager / Registry
 
-This repository contains the Registry metadata and example Workflows. The source code is hosted on [GitHub](https://github.com/yinhcao/ComfyUI-YinChao). See [REGISTRY_PUBLISHING.md](REGISTRY_PUBLISHING.md) for the remaining Comfy Registry publishing steps.
+Search for `YinChao Music` in ComfyUI Manager, click Install, and restart ComfyUI.
 
 ### Manual installation
 
@@ -29,8 +35,9 @@ python -m pip install -r requirements.txt
 ## Configure the API key
 
 1. Open the [YinChao Platform](https://platform.yinchaoyongxian.com/) and sign up or sign in.
-2. Add balance or purchase credits on the platform, then create an API key.
-3. In ComfyUI, open Settings → YinChao → API Key and save the key.
+2. Apply for the limited-time free quota or add balance.
+3. Create a YinChao API key.
+4. In ComfyUI, open Settings → YinChao → API Key and save the key.
 
 The key is not a node input and is never written to Workflow JSON. For headless environments, use the environment variable:
 

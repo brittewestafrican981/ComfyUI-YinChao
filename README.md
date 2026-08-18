@@ -2,13 +2,19 @@
 
 [English](README.en.md)
 
+> 🎵 **音潮音乐大模型 V4.0 重磅上线！**
+>
+> 音乐生成低至 **¥0.22/首**，现在申请即可获得限时免费名额。
+>
+> [立即申请免费名额](https://platform.yinchaoyongxian.com/)
+
 音潮音乐节点（ComfyUI V3）。插件把音潮开放平台的歌词、生歌、仿写和扩写能力接入 ComfyUI，并将生成结果转换成原生 `AUDIO`，可以继续连接音频、视频和字幕节点。
 
 ## 安装
 
 ### ComfyUI Manager / Registry
 
-本仓库包含 Registry 所需的 `pyproject.toml` 和示例 Workflow。当前代码托管在 [GitHub](https://github.com/yinhcao/ComfyUI-YinChao)，后续按 [REGISTRY_PUBLISHING.md](REGISTRY_PUBLISHING.md) 完成 Comfy Registry 发布。
+在 ComfyUI Manager 中搜索 `YinChao Music`，找到节点后点击安装，重启 ComfyUI 即可使用。
 
 ### 手动安装
 
@@ -29,8 +35,9 @@ python -m pip install -r requirements.txt
 ## 配置 API Key
 
 1. 打开 [音潮开放平台](https://platform.yinchaoyongxian.com/)，注册或登录。
-2. 在平台完成账户充值或购买额度，再创建 API Key。
-3. 在 ComfyUI 的 Settings → YinChao → API Key 中填写密钥并保存。
+2. 申请限时免费名额，或完成账户充值。
+3. 创建音潮 API Key。
+4. 在 ComfyUI 的 Settings → YinChao → API Key 中填写密钥并保存。
 
 密钥不会作为节点输入，也不会写入 Workflow JSON。无图形界面时可以使用环境变量：
 
