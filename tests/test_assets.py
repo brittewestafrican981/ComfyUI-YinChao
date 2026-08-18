@@ -63,6 +63,16 @@ class AssetTests(unittest.TestCase):
         self.assertIn('PublisherId = "yinhcao"', pyproject)
         self.assertIn("PublisherId", publishing)
 
+    def test_readme_switch_and_license_metadata_are_present(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        english_readme = (ROOT / "README.en.md").read_text(encoding="utf-8")
+        license_text = (ROOT / "LICENSE").read_text(encoding="utf-8")
+        pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
+        self.assertIn("[English](README.en.md)", readme)
+        self.assertIn("[中文](README.md)", english_readme)
+        self.assertIn("MIT License", license_text)
+        self.assertIn('license = { file = "LICENSE" }', pyproject)
+
     def test_settings_js_is_present_at_runtime_and_in_python_package(self):
         root_settings = ROOT / "js" / "settings.js"
         package_settings = ROOT / "yinchao_music" / "js" / "settings.js"

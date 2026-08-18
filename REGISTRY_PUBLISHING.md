@@ -2,6 +2,8 @@
 
 当前仓库已完成 GitHub 代码推送；Comfy Registry 发布仍需单独执行。
 
+当前版本使用 MIT License，许可证文件位于仓库根目录的 `LICENSE`，并已在 `pyproject.toml` 中声明。
+
 Comfy Registry 需要两个不能凭空猜测的身份字段：
 
 ```toml
