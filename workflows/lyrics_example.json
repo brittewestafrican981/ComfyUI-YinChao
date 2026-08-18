@@ -1,0 +1,27 @@
+{
+  "last_node_id": 1,
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "YinChaoGenerateLyrics",
+      "pos": [80, 120],
+      "size": [360, 220],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {"name": "title", "type": "STRING", "links": null, "slot_index": 0},
+        {"name": "lyrics", "type": "STRING", "links": null, "slot_index": 1}
+      ],
+      "properties": {"Node name for S&R": "YinChaoGenerateLyrics"},
+      "widgets_values": ["一首关于海边夏夜和重新出发的中文流行歌词"]
+    }
+  ],
+  "links": [],
+  "groups": [],
+  "config": {},
+  "extra": {"description": "YinChao standalone lyric generation example"},
+  "version": 0.4
+}

@@ -1,0 +1,4 @@
+include README.md REGISTRY_PUBLISHING.md requirements.txt pyproject.toml
+recursive-include js *.js
+recursive-include workflows *.json
+recursive-include yinchao_music *.py

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yinchao-music"
+version = "0.1.0"
+description = "Modern ComfyUI V3 nodes for YinChao lyric and music generation"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31.0",
+    "av>=12.0.0",
+    "numpy>=1.24.0",
+]
+classifiers = [
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Repository = "https://github.com/yinhcao/ComfyUI-YinChao"
+Documentation = "https://platform.yinchaoyongxian.com/"
+
+[tool.comfy]
+PublisherId = "yinhcao"
+DisplayName = "YinChao Music"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["yinchao_music*"]
+
+[tool.setuptools.package-data]
+yinchao_music = ["js/*.js"]

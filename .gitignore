@@ -1,0 +1,9 @@
+AGENTS.md
+AGENTS.override.md
+.claude/
+.codex/
+.task-driver/
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
