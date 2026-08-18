@@ -67,7 +67,9 @@ class ApiClientTests(unittest.TestCase):
         self.assertEqual(post_kwargs["json"]["n"], 1)
         self.assertEqual(post_kwargs["json"]["task_type"], "normal")
         self.assertNotIn("api_key", post_kwargs["json"])
+        self.assertEqual(post_kwargs["headers"]["channel"], "ComfyUI")
         self.assertEqual(transport.calls[1][2]["params"], {"task_id": "task-123"})
+        self.assertEqual(transport.calls[1][2]["headers"]["channel"], "ComfyUI")
         self.assertEqual(result.audio_url, "https://cdn.example.test/song.mp3")
         self.assertEqual(result.task_id, "task-123")
 

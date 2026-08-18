@@ -92,6 +92,7 @@ class YinChaoClient:
             "Authorization": f"Bearer {self.api_key}",
             "Accept": "application/json",
             "User-Agent": "YinChao-ComfyUI/1.0",
+            "channel": "ComfyUI",
         }
 
     def _request(
