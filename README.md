@@ -6,7 +6,7 @@
 >
 > 音乐生成低至 **¥0.22/首**，现在申请即可获得限时免费名额。
 >
-> [立即申请免费名额](https://platform.yinchaoyongxian.com/)
+> [立即申请免费名额](https://platform.yinchaoyongxian.com/?register_channel=ComfyUI)
 
 音潮音乐节点（ComfyUI V3）。插件把音潮开放平台的歌词、生歌、仿写和扩写能力接入 ComfyUI，并将生成结果转换成原生 `AUDIO`，可以继续连接音频、视频和字幕节点。
 
@@ -34,7 +34,7 @@ python -m pip install -r requirements.txt
 
 ## 配置 API Key
 
-1. 打开 [音潮开放平台](https://platform.yinchaoyongxian.com/)，注册或登录。
+1. 打开 [音潮开放平台](https://platform.yinchaoyongxian.com/?register_channel=ComfyUI)，注册或登录。
 2. 申请限时免费名额，或完成账户充值。
 3. 创建音潮 API Key。
 4. 在 ComfyUI 的 Settings → YinChao → API Key 中填写密钥并保存。
